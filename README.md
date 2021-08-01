@@ -11,7 +11,8 @@ Ultrasonic distance measuring using esp32 with display
 
 * [TFLuna](https://youyeetoo.com/blog/tflunald0023-55)
 
-![](lidar.jpg)
+![Lidar](lidar.jpg)
+![Lidar on Arduino](arduino_lidar.jpg)
 
 ## Software Packages
 
