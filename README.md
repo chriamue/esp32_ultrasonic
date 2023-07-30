@@ -1,41 +1,41 @@
-# esp32_ultrasonic
+# ESP32 Ultrasonic and Lidar Distance Measurement
 
-Ultrasonic distance measuring using esp32 with display
+Measure distances using the ESP32, combined with both ultrasonic and Lidar sensors, and display the results on a screen.
 
-## Hardware
+## 🛠 Hardware Components
 
-* [Heltec ESP32 with ](https://heltec.org/project/wifi-kit-32/)
+* [Heltec ESP32](https://heltec.org/project/wifi-kit-32/)
 * HC-SR04 Ultrasonic Sensor
+* ![Ultrasonic Setup](image.jpg)
+* [TFLuna Lidar Sensor](https://youyeetoo.com/blog/tflunald0023-55)
+* ![Lidar Image](lidar.jpg)
+* ![Lidar on Arduino Setup](arduino_lidar.jpg)
 
-![](image.jpg)
+## 💽 Required Software Packages
 
-* [TFLuna](https://youyeetoo.com/blog/tflunald0023-55)
+Ensure you have the following packages installed in your Arduino IDE:
 
-![Lidar](lidar.jpg)
-![Lidar on Arduino](arduino_lidar.jpg)
+* [Heltec ESP32 Library](https://github.com/HelTecAutomation/Heltec_ESP32)
+* [HC-SR04 Library](https://github.com/d03n3rfr1tz3/HC-SR04)
 
-## Software Packages
+## 🔗 Pin Connections
 
-These packages have to be installed in the Arduino IDE.
+Ensure to make the following connections between the ESP32 and the respective sensors. Refer to the [ESP32 Pins](https://resource.heltec.cn/download/WiFi_Kit_32/WIFI_Kit_32_pinoutDiagram_V2.1.pdf) for the detailed pinout diagram.
 
-* [Heltec](https://github.com/HelTecAutomation/Heltec_ESP32)
-* [HCSR04](https://github.com/d03n3rfr1tz3/HC-SR04)
+### Ultrasonic Connections (HC-SR04)
 
-## Pinout
+| HC-SR04 Pin | Connection   | ESP32 Pin | Description     |
+|-------------|--------------|-----------|-----------------|
+| 1           | **GND**      | Ground    | Ground          |
+| 2           | **5V (VCC)** | Power     | Power supply    |
+| 12          | **Trigger**  | GPIO17    | Trigger Signal  |
+| 13          | **Echo**     | GPIO15    | Echo Signal     |
 
-[ESP32 Pins](https://resource.heltec.cn/download/WiFi_Kit_32/WIFI_Kit_32_pinoutDiagram_V2.1.pdf)
+### Lidar Connections (TFLuna)
 
-## Ultrasonic
-
-- 1 - GND
-- 2 - 5V (VCC)
-- 12 - GPIO17 (trigger)
-- 13 - GPIO15 (echo)
-
-## Lidar
-
- - 1 - 5V
- - 2 - GPIO4 (SDA)
- - 3 - GPIO15 (SCL)
- - 4 - GND
- 
+| TFLuna Pin  | Connection  | ESP32 Pin | Description     |
+|-------------|-------------|-----------|-----------------|
+| 1           | **5V**      | Power     | Power Supply    |
+| 2           | **SDA**     | GPIO4     | Data Line       |
+| 3           | **SCL**     | GPIO15    | Clock Line      |
+| 4           | **GND**     | Ground    | Ground          |
